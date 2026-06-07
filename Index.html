@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+<meta charset="UTF-8">
+<title>سؤال ❤️</title>
+
+<style>
+body{
+ margin:0;
+ height:100vh;
+ display:flex;
+ justify-content:center;
+ align-items:center;
+ background:linear-gradient(135deg,#ff9ecf,#ff69b4);
+ font-family:Tahoma;
+ overflow:hidden;
+}
+
+.box{
+ text-align:center;
+ background:#ffffff44;
+ padding:30px;
+ border-radius:25px;
+}
+
+h1{
+ color:white;
+ font-size:35px;
+}
+
+button{
+ border:0;
+ padding:15px 35px;
+ margin:15px;
+ border-radius:15px;
+ font-size:22px;
+ cursor:pointer;
+ transition:.2s;
+}
+
+#yes{
+ background:#ff1493;
+ color:white;
+}
+
+#no{
+ background:white;
+ position:absolute;
+}
+
+#msg{
+ color:white;
+ font-size:30px;
+ display:none;
+}
+</style>
+
+</head>
+
+<body>
+
+<div class="box">
+
+<h1>هل تحبيني؟ ❤️</h1>
+
+<button id="yes" onclick="love()">نعم ❤️</button>
+
+<button id="no">لا 😭</button>
+
+<div id="msg">عرفت إنك تحبيني 🥹❤️</div>
+
+</div>
+
+
+<script>
+
+let yes = document.getElementById("yes");
+let no = document.getElementById("no");
+
+let size = 22;
+
+
+function moveNo(){
+
+ let x = Math.random() * (window.innerWidth-100);
+ let y = Math.random() * (window.innerHeight-50);
+
+ no.style.left=x+"px";
+ no.style.top=y+"px";
+
+ size += 5;
+ yes.style.fontSize=size+"px";
+ yes.style.padding=(size/2)+"px "+size+"px";
+
+}
+
+
+no.addEventListener("mouseover", moveNo);
+no.addEventListener("touchstart", moveNo);
+
+
+function love(){
+
+ document.getElementById("msg").style.display="block";
+
+}
+
+</script>
+
+</body>
+</html>
